@@ -2,4 +2,4 @@
 *******README******
 ********************
 
-Xmazon & OAuth2s
+Xmazon & OAuth2
