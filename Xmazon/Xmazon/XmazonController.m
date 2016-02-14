@@ -8,6 +8,7 @@
 
 #import "XmazonController.h"
 #import "GROAuth2SessionManager/GROAuth2SessionManager.h"
+#import "ApiRequest.h"
 
 @interface XmazonController ()
 
@@ -15,8 +16,12 @@
 
 @implementation XmazonController
 
+ApiRequest* api;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    api = [ApiRequest alloc];
+    [api getToken];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -24,69 +29,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)btnTest:(id)sender {
+
+- (IBAction)btnLogin:(id)sender {
+    NSString* email;
+    NSString* password;
+    email = [self.lableEmail text];
+    password = [self.labelPassword text];
+    
     NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr"];
-    GROAuth2SessionManager *sessionManager = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"f5a2d392-e727-40ed-8db0-19b18f155c52" secret:@"7a2d39dbb5424e4c5c916d7eb71dcc40bcc07401"];
-    
-    
-    NSDictionary* d = @{
-                        @"grant_type" : @"client_credentials",
-                        };
-    NSString* token;
-    [sessionManager authenticateUsingOAuthWithPath:@"/oauth/token" parameters:d success:^(AFOAuthCredential *credential) {
-        [AFOAuthCredential storeCredential:credential withIdentifier:@"AccessToken"];
-        NSLog(@"%@",credential.accessToken);
-        NSLog(@"I have a token! %@ with refresh token %@ of type %@ ", credential.accessToken, credential.refreshToken, credential.tokenType);
-        [AFOAuthCredential storeCredential:credential withIdentifier:sessionManager.serviceProviderIdentifier];
-        }
-        failure:^(NSError *error) {
-                NSLog(@"Error: %@", error);
-        }];
-    
-    
-    
-    AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
-    /*NSString *authValue = [NSString stringWithFormat:@"Bearer %@", credential.accessToken];
-    NSDictionary* header = @{
-     @"Authorisation" : authValue,
-     };*/
-    
-    [sessionManager setAuthorizationHeaderWithCredential:credential];
-    __block NSMutableArray *myArray;
-    [sessionManager GET:@"store/list" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"sa marche");
-        NSDictionary *jsonDict = (NSDictionary *) responseObject;
-        //!!! here is answer (parsed from mapped JSON: {"result":"STRING"}) -
-        NSArray *test = [NSArray arrayWithObject:[jsonDict objectForKey:@"result"]];
-        NSLog(@"test %@",test[0]);
-        
-        myArray = [responseObject objectForKey:@"result"];
-        
-        NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"sa marche pas");
-    }];
-    
-    NSLog(@" test de l'uid de merde :%@",[[myArray objectAtIndex:0] objectForKey:@"uid"]);
-    NSString *authValue = [NSString stringWithFormat:@"%@%@",@"/category/list?store_uid=",([[myArray objectAtIndex:0] objectForKey:@"uid"])];
-    
-    [sessionManager GET:authValue parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"sa marche categorie");
-       // NSDictionary *jsonDict = (NSDictionary *) responseObject;
-////!!! here is answer (parsed from mapped JSON: {"result":"STRING"}) ->
-        //NSArray *test = [NSArray arrayWithObject:[jsonDict objectForKey:@"result"]];
-        NSLog(@"categorie : %@",responseObject);
-        
-        NSArray *myArray2 = [responseObject objectForKey:@"result"];
-        NSLog(@"%@",myArray2);
-        //NSLog (@"%@", [[myArray2 objectAtIndex:2] objectForKey:@"name"]);
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"sa marche pas");
-    }];
-    
-    
+    api.sessionManagerUser = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"f5a2d392-e727-40ed-8db0-19b18f155c52" secret:@"7a2d39dbb5424e4c5c916d7eb71dcc40bcc07401"];
+    NSLog(@"bonjour");
+    __block BOOL result = true;
+    [api.sessionManagerUser authenticateUsingOAuthWithPath:@"/oauth/token" username:email password:password scope:nil
+                                                success:^(AFOAuthCredential *credential) {
+                                                    result = true;
+                                                    NSLog(@"sa marche token user %@ : ",credential.accessToken);
+                                                } failure:^(NSError *error) {
+                                                    NSLog(@"sa marche pas token user");
+                                                    result = false;
+                                                }];
 }
 
 /*

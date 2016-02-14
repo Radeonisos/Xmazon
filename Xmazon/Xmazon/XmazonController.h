@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface XmazonController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *lableEmail;
+@property (weak, nonatomic) IBOutlet UITextField *labelPassword;
 
 @end
