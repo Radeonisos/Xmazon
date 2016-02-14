@@ -67,7 +67,7 @@
     sessionManagerApp_.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     [sessionManagerApp_ GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche");
-        NSDictionary *jsonDict = (NSDictionary *) responseObject;
+        //NSDictionary *jsonDict = (NSDictionary *) responseObject;
         
         //NSArray *test = [NSArray arrayWithObject:[jsonDict objectForKey:@"result"]];
         //NSLog(@"test %@",test[0]);

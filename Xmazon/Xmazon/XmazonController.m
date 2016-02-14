@@ -9,6 +9,8 @@
 #import "XmazonController.h"
 #import "GROAuth2SessionManager/GROAuth2SessionManager.h"
 #import "ApiRequest.h"
+#import "ListXmazonController.h"
+
 
 @interface XmazonController ()
 
@@ -44,9 +46,16 @@ ApiRequest* api;
                                                 success:^(AFOAuthCredential *credential) {
                                                     result = true;
                                                     NSLog(@"sa marche token user %@ : ",credential.accessToken);
+                                                    ListXmazonController* viewController = [[ListXmazonController alloc] init];
+                                                    [self.navigationController pushViewController:viewController animated:YES];
+                                                    
+                                                
                                                 } failure:^(NSError *error) {
-                                                    NSLog(@"sa marche pas token user");
-                                                    result = false;
+                                                    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Authentification" message:@"Adresse Mail ou mot de passe incorrecte" preferredStyle:UIAlertControllerStyleAlert];
+                                                    UIAlertAction* validateAction = [UIAlertAction actionWithTitle:@"Validate" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
+                                                    }];
+                                                    [alertController addAction:validateAction];
+                                                    [self presentViewController:alertController animated:YES completion:nil];
                                                 }];
 }
 

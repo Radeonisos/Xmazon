@@ -12,6 +12,8 @@
 		CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */; };
 		CA4AE4DC1C70D2F900A8F690 /* 477015700_d1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DB1C70D2F900A8F690 /* 477015700_d1.jpg */; };
 		CA4AE4DE1C70D60A00A8F690 /* the-blurred-819391_640.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DD1C70D60A00A8F690 /* the-blurred-819391_640.jpg */; };
+		CA4AE4E71C713CD400A8F690 /* ListXmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */; };
+		CA4AE4E81C713CD400A8F690 /* ListXmazonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */; };
 		CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA648D641C6CD5A20084A07F /* AppDelegate.m */; };
 		CA648D6D1C6CD5A20084A07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA648D6C1C6CD5A20084A07F /* Assets.xcassets */; };
 		CA648D701C6CD5A20084A07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA648D6E1C6CD5A20084A07F /* LaunchScreen.storyboard */; };
@@ -51,6 +53,9 @@
 		CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XmazonController.xib; sourceTree = "<group>"; };
 		CA4AE4DB1C70D2F900A8F690 /* 477015700_d1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 477015700_d1.jpg; sourceTree = "<group>"; };
 		CA4AE4DD1C70D60A00A8F690 /* the-blurred-819391_640.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-blurred-819391_640.jpg"; sourceTree = "<group>"; };
+		CA4AE4E41C713CD400A8F690 /* ListXmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListXmazonController.h; sourceTree = "<group>"; };
+		CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListXmazonController.m; sourceTree = "<group>"; };
+		CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListXmazonController.xib; sourceTree = "<group>"; };
 		CA648D5D1C6CD5A20084A07F /* Xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA648D631C6CD5A20084A07F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA648D641C6CD5A20084A07F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +139,9 @@
 		CA648D5F1C6CD5A20084A07F /* Xmazon */ = {
 			isa = PBXGroup;
 			children = (
+				CA4AE4E41C713CD400A8F690 /* ListXmazonController.h */,
+				CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */,
+				CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */,
 				CA648D631C6CD5A20084A07F /* AppDelegate.h */,
 				CA648D641C6CD5A20084A07F /* AppDelegate.m */,
 				CA648D6C1C6CD5A20084A07F /* Assets.xcassets */,
@@ -289,6 +297,7 @@
 			files = (
 				CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */,
 				CA4AE4DC1C70D2F900A8F690 /* 477015700_d1.jpg in Resources */,
+				CA4AE4E81C713CD400A8F690 /* ListXmazonController.xib in Resources */,
 				CA99DFC21C6CDE08006A92AC /* Default-568h@2x.png in Resources */,
 				CA648D701C6CD5A20084A07F /* LaunchScreen.storyboard in Resources */,
 				CA4AE4DE1C70D60A00A8F690 /* the-blurred-819391_640.jpg in Resources */,
@@ -414,6 +423,7 @@
 				CA99DFC01C6CDA5B006A92AC /* main.m in Sources */,
 				CAF6F2EB1C6FA12C0093352D /* ApiRequest.m in Sources */,
 				CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */,
+				CA4AE4E71C713CD400A8F690 /* ListXmazonController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
