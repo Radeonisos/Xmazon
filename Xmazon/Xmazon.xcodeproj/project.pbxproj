@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		004566E2C701F619B5B2FCCC /* libPods-XmazonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 195781EB6192A5C0A38BC955 /* libPods-XmazonTests.a */; };
+		CA1036C71C6CD86B00A3E4E4 /* XmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */; };
+		CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */; };
+		CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA648D641C6CD5A20084A07F /* AppDelegate.m */; };
+		CA648D6D1C6CD5A20084A07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA648D6C1C6CD5A20084A07F /* Assets.xcassets */; };
+		CA648D701C6CD5A20084A07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA648D6E1C6CD5A20084A07F /* LaunchScreen.storyboard */; };
+		CA648D7B1C6CD5A20084A07F /* XmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA648D7A1C6CD5A20084A07F /* XmazonTests.m */; };
+		CA648D861C6CD5A20084A07F /* XmazonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA648D851C6CD5A20084A07F /* XmazonUITests.m */; };
+		CA99DFC01C6CDA5B006A92AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA99DFBF1C6CDA5B006A92AC /* main.m */; };
+		CA99DFC21C6CDE08006A92AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA99DFC11C6CDE08006A92AC /* Default-568h@2x.png */; };
+		CAF6F2EB1C6FA12C0093352D /* ApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF6F2EA1C6FA12C0093352D /* ApiRequest.m */; };
+		F7631622ADFD888F15C539BD /* libPods-Xmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1750B101094A637EB3EADCE /* libPods-Xmazon.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA648D771C6CD5A20084A07F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA648D551C6CD5A20084A07F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA648D5C1C6CD5A20084A07F;
+			remoteInfo = Xmazon;
+		};
+		CA648D821C6CD5A20084A07F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA648D551C6CD5A20084A07F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA648D5C1C6CD5A20084A07F;
+			remoteInfo = Xmazon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09C8F4F7260FE17FCC75487C /* Pods-XmazonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XmazonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-XmazonTests/Pods-XmazonTests.release.xcconfig"; sourceTree = "<group>"; };
+		195781EB6192A5C0A38BC955 /* libPods-XmazonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XmazonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		729378537E697E818CF7FF44 /* Pods-Xmazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.debug.xcconfig"; sourceTree = "<group>"; };
+		8F72F17CC68BA8D3BAA23896 /* Pods-Xmazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon.release.xcconfig"; sourceTree = "<group>"; };
+		9EC2268E104FBF383E92A015 /* Pods-XmazonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XmazonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XmazonTests/Pods-XmazonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA1036C41C6CD86B00A3E4E4 /* XmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmazonController.h; sourceTree = "<group>"; };
+		CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmazonController.m; sourceTree = "<group>"; };
+		CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XmazonController.xib; sourceTree = "<group>"; };
+		CA648D5D1C6CD5A20084A07F /* Xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA648D631C6CD5A20084A07F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CA648D641C6CD5A20084A07F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CA648D6C1C6CD5A20084A07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA648D6F1C6CD5A20084A07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA648D711C6CD5A20084A07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA648D761C6CD5A20084A07F /* XmazonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XmazonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA648D7A1C6CD5A20084A07F /* XmazonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XmazonTests.m; sourceTree = "<group>"; };
+		CA648D7C1C6CD5A20084A07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA648D811C6CD5A20084A07F /* XmazonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XmazonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA648D851C6CD5A20084A07F /* XmazonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XmazonUITests.m; sourceTree = "<group>"; };
+		CA648D871C6CD5A20084A07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA99DFBF1C6CDA5B006A92AC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CA99DFC11C6CDE08006A92AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CAF6F2EA1C6FA12C0093352D /* ApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiRequest.m; sourceTree = "<group>"; };
+		CAF6F2EC1C6FA1770093352D /* ApiRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiRequest.h; sourceTree = "<group>"; };
+		D1750B101094A637EB3EADCE /* libPods-Xmazon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xmazon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA648D5A1C6CD5A20084A07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7631622ADFD888F15C539BD /* libPods-Xmazon.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA648D731C6CD5A20084A07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				004566E2C701F619B5B2FCCC /* libPods-XmazonTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA648D7E1C6CD5A20084A07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD03D9F8324B9A089C1D51B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				195781EB6192A5C0A38BC955 /* libPods-XmazonTests.a */,
+				D1750B101094A637EB3EADCE /* libPods-Xmazon.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA648D541C6CD5A20084A07F = {
+			isa = PBXGroup;
+			children = (
+				CA99DFC11C6CDE08006A92AC /* Default-568h@2x.png */,
+				CA648D5F1C6CD5A20084A07F /* Xmazon */,
+				CA648D791C6CD5A20084A07F /* XmazonTests */,
+				CA648D841C6CD5A20084A07F /* XmazonUITests */,
+				CA648D5E1C6CD5A20084A07F /* Products */,
+				FB6D6B3BA207DC73076B858D /* Pods */,
+				AD03D9F8324B9A089C1D51B4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CA648D5E1C6CD5A20084A07F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA648D5D1C6CD5A20084A07F /* Xmazon.app */,
+				CA648D761C6CD5A20084A07F /* XmazonTests.xctest */,
+				CA648D811C6CD5A20084A07F /* XmazonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA648D5F1C6CD5A20084A07F /* Xmazon */ = {
+			isa = PBXGroup;
+			children = (
+				CA648D631C6CD5A20084A07F /* AppDelegate.h */,
+				CA648D641C6CD5A20084A07F /* AppDelegate.m */,
+				CA648D6C1C6CD5A20084A07F /* Assets.xcassets */,
+				CA648D6E1C6CD5A20084A07F /* LaunchScreen.storyboard */,
+				CA648D711C6CD5A20084A07F /* Info.plist */,
+				CA1036C41C6CD86B00A3E4E4 /* XmazonController.h */,
+				CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */,
+				CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */,
+				CA99DFBF1C6CDA5B006A92AC /* main.m */,
+				CAF6F2EA1C6FA12C0093352D /* ApiRequest.m */,
+				CAF6F2EC1C6FA1770093352D /* ApiRequest.h */,
+			);
+			path = Xmazon;
+			sourceTree = "<group>";
+		};
+		CA648D791C6CD5A20084A07F /* XmazonTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA648D7A1C6CD5A20084A07F /* XmazonTests.m */,
+				CA648D7C1C6CD5A20084A07F /* Info.plist */,
+			);
+			path = XmazonTests;
+			sourceTree = "<group>";
+		};
+		CA648D841C6CD5A20084A07F /* XmazonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CA648D851C6CD5A20084A07F /* XmazonUITests.m */,
+				CA648D871C6CD5A20084A07F /* Info.plist */,
+			);
+			path = XmazonUITests;
+			sourceTree = "<group>";
+		};
+		FB6D6B3BA207DC73076B858D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EC2268E104FBF383E92A015 /* Pods-XmazonTests.debug.xcconfig */,
+				09C8F4F7260FE17FCC75487C /* Pods-XmazonTests.release.xcconfig */,
+				729378537E697E818CF7FF44 /* Pods-Xmazon.debug.xcconfig */,
+				8F72F17CC68BA8D3BAA23896 /* Pods-Xmazon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA648D5C1C6CD5A20084A07F /* Xmazon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA648D8A1C6CD5A20084A07F /* Build configuration list for PBXNativeTarget "Xmazon" */;
+			buildPhases = (
+				7C9F415168B1F92E79F145F1 /* Check Pods Manifest.lock */,
+				CA648D591C6CD5A20084A07F /* Sources */,
+				CA648D5A1C6CD5A20084A07F /* Frameworks */,
+				CA648D5B1C6CD5A20084A07F /* Resources */,
+				5C153621C2EA6E3509CA322D /* Embed Pods Frameworks */,
+				829D944A9200D4EAE5A3BCDC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Xmazon;
+			productName = Xmazon;
+			productReference = CA648D5D1C6CD5A20084A07F /* Xmazon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA648D751C6CD5A20084A07F /* XmazonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA648D8D1C6CD5A20084A07F /* Build configuration list for PBXNativeTarget "XmazonTests" */;
+			buildPhases = (
+				519EC17187662D6585E9C9AE /* Check Pods Manifest.lock */,
+				CA648D721C6CD5A20084A07F /* Sources */,
+				CA648D731C6CD5A20084A07F /* Frameworks */,
+				CA648D741C6CD5A20084A07F /* Resources */,
+				791E8F8516E9F32F6D1C9282 /* Embed Pods Frameworks */,
+				F13B00BB31F6991668F630A4 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA648D781C6CD5A20084A07F /* PBXTargetDependency */,
+			);
+			name = XmazonTests;
+			productName = XmazonTests;
+			productReference = CA648D761C6CD5A20084A07F /* XmazonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CA648D801C6CD5A20084A07F /* XmazonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA648D901C6CD5A20084A07F /* Build configuration list for PBXNativeTarget "XmazonUITests" */;
+			buildPhases = (
+				CA648D7D1C6CD5A20084A07F /* Sources */,
+				CA648D7E1C6CD5A20084A07F /* Frameworks */,
+				CA648D7F1C6CD5A20084A07F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA648D831C6CD5A20084A07F /* PBXTargetDependency */,
+			);
+			name = XmazonUITests;
+			productName = XmazonUITests;
+			productReference = CA648D811C6CD5A20084A07F /* XmazonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA648D551C6CD5A20084A07F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Mickael Bordage";
+				TargetAttributes = {
+					CA648D5C1C6CD5A20084A07F = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					CA648D751C6CD5A20084A07F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = CA648D5C1C6CD5A20084A07F;
+					};
+					CA648D801C6CD5A20084A07F = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = CA648D5C1C6CD5A20084A07F;
+					};
+				};
+			};
+			buildConfigurationList = CA648D581C6CD5A20084A07F /* Build configuration list for PBXProject "Xmazon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA648D541C6CD5A20084A07F;
+			productRefGroup = CA648D5E1C6CD5A20084A07F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA648D5C1C6CD5A20084A07F /* Xmazon */,
+				CA648D751C6CD5A20084A07F /* XmazonTests */,
+				CA648D801C6CD5A20084A07F /* XmazonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA648D5B1C6CD5A20084A07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */,
+				CA99DFC21C6CDE08006A92AC /* Default-568h@2x.png in Resources */,
+				CA648D701C6CD5A20084A07F /* LaunchScreen.storyboard in Resources */,
+				CA648D6D1C6CD5A20084A07F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA648D741C6CD5A20084A07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA648D7F1C6CD5A20084A07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		519EC17187662D6585E9C9AE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C153621C2EA6E3509CA322D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		791E8F8516E9F32F6D1C9282 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XmazonTests/Pods-XmazonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C9F415168B1F92E79F145F1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		829D944A9200D4EAE5A3BCDC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Xmazon/Pods-Xmazon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13B00BB31F6991668F630A4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XmazonTests/Pods-XmazonTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA648D591C6CD5A20084A07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1036C71C6CD86B00A3E4E4 /* XmazonController.m in Sources */,
+				CA99DFC01C6CDA5B006A92AC /* main.m in Sources */,
+				CAF6F2EB1C6FA12C0093352D /* ApiRequest.m in Sources */,
+				CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA648D721C6CD5A20084A07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA648D7B1C6CD5A20084A07F /* XmazonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA648D7D1C6CD5A20084A07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA648D861C6CD5A20084A07F /* XmazonUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA648D781C6CD5A20084A07F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA648D5C1C6CD5A20084A07F /* Xmazon */;
+			targetProxy = CA648D771C6CD5A20084A07F /* PBXContainerItemProxy */;
+		};
+		CA648D831C6CD5A20084A07F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA648D5C1C6CD5A20084A07F /* Xmazon */;
+			targetProxy = CA648D821C6CD5A20084A07F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA648D6E1C6CD5A20084A07F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA648D6F1C6CD5A20084A07F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA648D881C6CD5A20084A07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA648D891C6CD5A20084A07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA648D8B1C6CD5A20084A07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 729378537E697E818CF7FF44 /* Pods-Xmazon.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Xmazon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.Xmazon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CA648D8C1C6CD5A20084A07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F72F17CC68BA8D3BAA23896 /* Pods-Xmazon.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Xmazon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.Xmazon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CA648D8E1C6CD5A20084A07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EC2268E104FBF383E92A015 /* Pods-XmazonTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XmazonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.XmazonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xmazon.app/Xmazon";
+			};
+			name = Debug;
+		};
+		CA648D8F1C6CD5A20084A07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C8F4F7260FE17FCC75487C /* Pods-XmazonTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = XmazonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.XmazonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xmazon.app/Xmazon";
+			};
+			name = Release;
+		};
+		CA648D911C6CD5A20084A07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XmazonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.XmazonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Xmazon;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CA648D921C6CD5A20084A07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = XmazonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = esgi.XmazonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Xmazon;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA648D581C6CD5A20084A07F /* Build configuration list for PBXProject "Xmazon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA648D881C6CD5A20084A07F /* Debug */,
+				CA648D891C6CD5A20084A07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA648D8A1C6CD5A20084A07F /* Build configuration list for PBXNativeTarget "Xmazon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA648D8B1C6CD5A20084A07F /* Debug */,
+				CA648D8C1C6CD5A20084A07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA648D8D1C6CD5A20084A07F /* Build configuration list for PBXNativeTarget "XmazonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA648D8E1C6CD5A20084A07F /* Debug */,
+				CA648D8F1C6CD5A20084A07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA648D901C6CD5A20084A07F /* Build configuration list for PBXNativeTarget "XmazonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA648D911C6CD5A20084A07F /* Debug */,
+				CA648D921C6CD5A20084A07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA648D551C6CD5A20084A07F /* Project object */;
+}
