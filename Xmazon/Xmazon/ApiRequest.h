@@ -14,7 +14,9 @@
 @property (nonatomic, assign) GROAuth2SessionManager* sessionManager;
 
 -(instancetype) init;
+-(void) getTokenUser;
 -(void) getToken;
 -(NSMutableArray*) getApi:(NSString*) url;
+-(NSMutableArray*) postApi;
 
 @end

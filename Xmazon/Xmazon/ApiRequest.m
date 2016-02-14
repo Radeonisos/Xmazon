@@ -39,6 +39,25 @@
     
 }
 
+-(void) getTokenUser{
+    NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr"];
+    sessionManager_ = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"f5a2d392-e727-40ed-8db0-19b18f155c52" secret:@"7a2d39dbb5424e4c5c916d7eb71dcc40bcc07401"];
+    
+    
+    NSDictionary* d = @{
+                        @"grant_type" : @"client_credentials",
+                        };
+    [sessionManager_ authenticateUsingOAuthWithPath:@"/oauth/token" username:@"bordage.mickael@gmail.com" password:@"toor" scope:nil
+      success:^(AFOAuthCredential *credential) {
+         NSLog(@"sa marche token user %@ : ",credential.accessToken);
+     } failure:^(NSError *error) {
+         NSLog(@"sa marche pas token user");
+     }];
+    
+}
+
+
+
 -(NSMutableArray*) getApi:(NSString*) url{
     AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
     [sessionManager_ setAuthorizationHeaderWithCredential:credential];
@@ -48,19 +67,19 @@
     [sessionManager_ GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche");
         NSDictionary *jsonDict = (NSDictionary *) responseObject;
-        //!!! here is answer (parsed from mapped JSON: {"result":"STRING"}) -
-        NSArray *test = [NSArray arrayWithObject:[jsonDict objectForKey:@"result"]];
-        NSLog(@"test %@",test[0]);
+        
+        //NSArray *test = [NSArray arrayWithObject:[jsonDict objectForKey:@"result"]];
+        //NSLog(@"test %@",test[0]);
         
         myArray = [responseObject objectForKey:@"result"];
-        NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
+        //NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
         dispatch_semaphore_signal(semaphore);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"sa marche pas");
         dispatch_semaphore_signal(semaphore);
     }];
     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    NSLog(@" test de l'uid de merde :%@",[[myArray objectAtIndex:0] objectForKey:@"uid"]);
+    //NSLog(@" test de l'uid de merde :%@",[[myArray objectAtIndex:0] objectForKey:@"uid"]);
     /*[sessionManager_ GET:authValue parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche categorie");
         // NSDictionary *jsonDict = (NSDictionary *) responseObject;
@@ -77,6 +96,25 @@
     }];*/
   
     return myArray;
+}
+
+
+-(NSMutableArray*) postApi{
+    NSMutableArray * result;
+    NSDictionary* d = @{
+                        @"email" : @"test1",
+                        @"password" : @"toor",
+                        };
+    
+    [sessionManager_ POST:@"/auth/subscribe" parameters:d success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"sa marche");
+        NSLog(@" Reponce du subscribe : %@", responseObject);
+    
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"sa marche pas");
+    }];
+    
+    return result;
 }
 
 
