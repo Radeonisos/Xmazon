@@ -16,26 +16,30 @@
 @implementation ListXmazonController
 
 NSMutableArray* resultArray ;
-NSMutableArray* words_;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [super viewDidLoad];
-     words_ = [NSMutableArray new];
-    [words_ addObject:@"Bonjour"];
-    [words_ addObject:@"Je suis"];
-    [words_ addObject:@"la"];
-    [words_ addObject:@"il"];
-    [words_ addObject:@"fait"];
-    [words_ addObject:@"FROID"];
-    self.title = @"Super liste !";
+    self.title = @"Liste des magasins";
     [self.navigationItem setHidesBackButton:TRUE];
     ApiRequest* api = [ApiRequest alloc];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(160, 240);
+    spinner.tag = 12;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
     NSString* urlList=@"store/list";
     [api getToken];
     resultArray = [api getApi:urlList];
     NSLog(@"Resultat du tableau des stores %@",resultArray);
+    [[self.view viewWithTag:12] stopAnimating];
+    
+    
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
+    //[[self.view viewWithTag:12] stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +78,7 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    NSLog(@"ONCLICK");
 }
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

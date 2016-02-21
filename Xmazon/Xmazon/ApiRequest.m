@@ -14,6 +14,7 @@
 
 @synthesize sessionManagerApp = sessionManagerApp_;
 @synthesize sessionManagerUser = sessionManagerUser_;
+@synthesize delegate;
 
 -(instancetype)init{
     self = [super init];
@@ -55,6 +56,21 @@
          result = false;
      }];
     return result;
+}
+
++(void)requestLocation:(NSString*)url and:(GROAuth2SessionManager*) sessionManagerApp_ completionBlock:(void (^)(NSArray * coordinates, NSError * error)) handler{
+    AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
+    [sessionManagerApp_ setAuthorizationHeaderWithCredential:credential];
+    __block NSMutableArray *myArray;
+    [sessionManagerApp_ GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"sa marche");
+        myArray = [responseObject objectForKey:@"result"];
+        //NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
+        [self.delegate requestError];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"sa marche pas");
+    }];
+    
 }
 
 
