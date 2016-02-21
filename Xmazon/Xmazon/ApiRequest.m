@@ -66,7 +66,6 @@
         NSLog(@"sa marche");
         myArray = [responseObject objectForKey:@"result"];
         //NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
-        [self.delegate requestError];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"sa marche pas");
     }];
@@ -79,8 +78,8 @@
     AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
     [sessionManagerApp_ setAuthorizationHeaderWithCredential:credential];
     __block NSMutableArray *myArray;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    sessionManagerApp_.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+   //// dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    //sessionManagerApp_.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     [sessionManagerApp_ GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche");
         //NSDictionary *jsonDict = (NSDictionary *) responseObject;
@@ -90,12 +89,13 @@
         
         myArray = [responseObject objectForKey:@"result"];
         //NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
-        dispatch_semaphore_signal(semaphore);
+        //dispatch_semaphore_signal(semaphore);
+        [self.delegate requestReceive:myArray];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"sa marche pas");
-        dispatch_semaphore_signal(semaphore);
+       // dispatch_semaphore_signal(semaphore);
     }];
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return myArray;
 }
 

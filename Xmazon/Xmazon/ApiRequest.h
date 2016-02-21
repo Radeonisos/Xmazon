@@ -11,9 +11,8 @@
 
 @protocol ApiRestDelagate
 @optional
--(void) requestReceive:(NSArray*)data;
+-(void) requestReceive:(NSMutableArray*)responce;
 -(void) requestError;
-
 @end
 
 @interface ApiRequest : NSObject

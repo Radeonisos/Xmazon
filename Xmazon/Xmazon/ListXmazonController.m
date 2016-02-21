@@ -7,15 +7,16 @@
 //
 
 #import "ListXmazonController.h"
-#import "ApiRequest.h"
+
 
 @interface ListXmazonController ()
+
 
 @end
 
 @implementation ListXmazonController
 
-NSMutableArray* resultArray ;
+NSMutableArray* resultArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +24,7 @@ NSMutableArray* resultArray ;
     self.title = @"Liste des magasins";
     [self.navigationItem setHidesBackButton:TRUE];
     ApiRequest* api = [ApiRequest alloc];
+    api.delegate = self;
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160, 240);
     spinner.tag = 12;
@@ -30,16 +32,15 @@ NSMutableArray* resultArray ;
     [spinner startAnimating];
     NSString* urlList=@"store/list";
     [api getToken];
-    resultArray = [api getApi:urlList];
+    resultArray= [api getApi:urlList];
+}
+
+- (void)requestReceive:(NSMutableArray *)responce{
+    resultArray = responce;
     NSLog(@"Resultat du tableau des stores %@",resultArray);
     [[self.view viewWithTag:12] stopAnimating];
+    [self.storeList reloadData];
     
-    
-    
-    
-    
-    // Do any additional setup after loading the view from its nib.
-    //[[self.view viewWithTag:12] stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,7 +79,7 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"ONCLICK");
+    NSLog(@"ONCLICK %@",[resultArray objectAtIndex:indexPath.row]);
 }
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
