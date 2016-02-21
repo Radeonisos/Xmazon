@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ApiRequest.h"
+#import "AppDelegate.h"
 
 @interface ListXmazonController : UIViewController <ApiRestDelagate>
 @property (weak, nonatomic) IBOutlet UITableView *storeList;

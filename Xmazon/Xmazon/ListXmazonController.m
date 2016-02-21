@@ -23,16 +23,15 @@ NSMutableArray* resultArray;
     [super viewDidLoad];
     self.title = @"Liste des magasins";
     [self.navigationItem setHidesBackButton:TRUE];
-    ApiRequest* api = [ApiRequest alloc];
-    api.delegate = self;
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.api.delegate = self;
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160, 240);
     spinner.tag = 12;
     [self.view addSubview:spinner];
     [spinner startAnimating];
     NSString* urlList=@"store/list";
-    [api getToken];
-    resultArray= [api getApi:urlList];
+    [appDelegate.api getApi:urlList];
 }
 
 - (void)requestReceive:(NSMutableArray *)responce{

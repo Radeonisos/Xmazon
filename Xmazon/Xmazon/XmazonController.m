@@ -9,6 +9,7 @@
 #import "XmazonController.h"
 #import "GROAuth2SessionManager/GROAuth2SessionManager.h"
 #import "ApiRequest.h"
+#import "AppDelegate.h"
 #import "ListXmazonController.h"
 
 
@@ -48,6 +49,8 @@ ApiRequest* api;
                                                     NSLog(@"sa marche token user %@ : ",credential.accessToken);
                                                     ListXmazonController* viewController = [[ListXmazonController alloc] init];
                                                     [self.navigationController pushViewController:viewController animated:YES];
+                                                    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+                                                    appDelegate.api = api;
                                                     
                                                 
                                                 } failure:^(NSError *error) {
