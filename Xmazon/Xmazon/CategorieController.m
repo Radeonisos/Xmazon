@@ -1,27 +1,27 @@
 //
-//  ListXmazonController.m
+//  CategorieController.m
 //  Xmazon
 //
-//  Created by Mickael Bordage on 14/02/2016.
+//  Created by Mickael Bordage on 21/02/2016.
 //  Copyright © 2016 Mickael Bordage. All rights reserved.
 //
 
-#import "ListXmazonController.h"
+#import "CategorieController.h"
 
-
-@interface ListXmazonController ()
-
+@interface CategorieController ()
 
 @end
 
-@implementation ListXmazonController
+@implementation CategorieController
 
-NSMutableArray* resultArray;
+@synthesize uid;
+
+NSMutableArray* resultArray2;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Liste des magasins";
-    [self.navigationItem setHidesBackButton:TRUE];
+    self.title = @"Liste des categorie";
+    [self.navigationItem setHidesBackButton:false];
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.api.delegate = self;
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -29,13 +29,16 @@ NSMutableArray* resultArray;
     spinner.tag = 12;
     [self.view addSubview:spinner];
     [spinner startAnimating];
-    NSString* urlList=@"store/list";
-    [appDelegate.api getApi:urlList];
+    NSString* urlCategory=@"/category/list?store_uid=";
+    NSString *authValue = [NSString stringWithFormat:@"%@%@",urlCategory,uid];
+    NSLog(@"%@",authValue);
+    [appDelegate.api getApi:authValue];
+    
 }
 
 - (void)requestReceive:(NSMutableArray *)responce{
-    resultArray = responce;
-    NSLog(@"Resultat du tableau des stores %@",resultArray);
+    resultArray2 = responce;
+    NSLog(@"Resultat du tableau des stores %@",resultArray2);
     [[self.view viewWithTag:12] stopAnimating];
     [self.storeList reloadData];
     
@@ -45,8 +48,6 @@ NSMutableArray* resultArray;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-     
-
 
 /*
 #pragma mark - Navigation
@@ -59,7 +60,7 @@ NSMutableArray* resultArray;
 */
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [resultArray count];
+    return [resultArray2 count];
 }
 
 static NSString* const kCellReuseIdentifier = @"CoolId";
@@ -69,7 +70,7 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
     if(!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kCellReuseIdentifier];
     }
-    NSDictionary* value = [resultArray objectAtIndex:indexPath.row];
+    NSDictionary* value = [resultArray2 objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [value objectForKey:@"name"];
     //cell.detailTextLabel.text = @"super trop bien";
@@ -77,26 +78,22 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"ONCLICK %@",[resultArray objectAtIndex:indexPath.row]);
-     CategorieController* viewController = [[CategorieController alloc] initWithNibName: @"ListXmazonController"bundle:nil];
-    viewController.uid =[[resultArray objectAtIndex:indexPath.row] objectForKey:@"uid"];
-    [self.navigationController pushViewController:viewController animated:YES];
+    NSLog(@"ONCLICK %@",[resultArray2 objectAtIndex:indexPath.row]);
     
 }
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if(editingStyle == UITableViewCellEditingStyleDelete) {
-        [resultArray removeObjectAtIndex:indexPath.row];
+        [resultArray2 removeObjectAtIndex:indexPath.row];
         //[tableView reloadData];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    NSString* value = [resultArray objectAtIndex:sourceIndexPath.row];
-    [resultArray removeObjectAtIndex:sourceIndexPath.row];
-    [resultArray insertObject:value atIndex:destinationIndexPath.row];
+    NSString* value = [resultArray2 objectAtIndex:sourceIndexPath.row];
+    [resultArray2 removeObjectAtIndex:sourceIndexPath.row];
+    [resultArray2 insertObject:value atIndex:destinationIndexPath.row];
 }
-
 
 @end

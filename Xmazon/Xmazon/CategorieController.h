@@ -1,17 +1,17 @@
 //
-//  ListXmazonController.h
+//  CategorieController.h
 //  Xmazon
 //
-//  Created by Mickael Bordage on 14/02/2016.
+//  Created by Mickael Bordage on 21/02/2016.
 //  Copyright © 2016 Mickael Bordage. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ApiRequest.h"
 #import "AppDelegate.h"
-#import "CategorieController.h"
 
-@interface ListXmazonController : UIViewController <ApiRestDelagate>
+@interface CategorieController : UIViewController <ApiRestDelagate>
 @property (weak, nonatomic) IBOutlet UITableView *storeList;
+@property (nonatomic, assign) NSString* uid;
 
 @end

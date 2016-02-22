@@ -10,6 +10,7 @@
 		004566E2C701F619B5B2FCCC /* libPods-XmazonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 195781EB6192A5C0A38BC955 /* libPods-XmazonTests.a */; };
 		CA1036C71C6CD86B00A3E4E4 /* XmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */; };
 		CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */; };
+		CA3281531C7A53C60009357F /* CategorieController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3281521C7A53C60009357F /* CategorieController.m */; };
 		CA4AE4DC1C70D2F900A8F690 /* 477015700_d1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DB1C70D2F900A8F690 /* 477015700_d1.jpg */; };
 		CA4AE4DE1C70D60A00A8F690 /* the-blurred-819391_640.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DD1C70D60A00A8F690 /* the-blurred-819391_640.jpg */; };
 		CA4AE4E71C713CD400A8F690 /* ListXmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */; };
@@ -51,6 +52,8 @@
 		CA1036C41C6CD86B00A3E4E4 /* XmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmazonController.h; sourceTree = "<group>"; };
 		CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmazonController.m; sourceTree = "<group>"; };
 		CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XmazonController.xib; sourceTree = "<group>"; };
+		CA3281511C7A53C60009357F /* CategorieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieController.h; sourceTree = "<group>"; };
+		CA3281521C7A53C60009357F /* CategorieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieController.m; sourceTree = "<group>"; };
 		CA4AE4DB1C70D2F900A8F690 /* 477015700_d1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 477015700_d1.jpg; sourceTree = "<group>"; };
 		CA4AE4DD1C70D60A00A8F690 /* the-blurred-819391_640.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "the-blurred-819391_640.jpg"; sourceTree = "<group>"; };
 		CA4AE4E41C713CD400A8F690 /* ListXmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListXmazonController.h; sourceTree = "<group>"; };
@@ -111,6 +114,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA32814E1C7A51D70009357F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA3281521C7A53C60009357F /* CategorieController.m */,
+				CA3281511C7A53C60009357F /* CategorieController.h */,
+				CA1036C41C6CD86B00A3E4E4 /* XmazonController.h */,
+				CA4AE4E41C713CD400A8F690 /* ListXmazonController.h */,
+				CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */,
+				CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CA32814F1C7A524B0009357F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */,
+				CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		CA648D541C6CD5A20084A07F = {
 			isa = PBXGroup;
 			children = (
@@ -139,17 +164,13 @@
 		CA648D5F1C6CD5A20084A07F /* Xmazon */ = {
 			isa = PBXGroup;
 			children = (
-				CA4AE4E41C713CD400A8F690 /* ListXmazonController.h */,
-				CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */,
-				CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */,
+				CA32814F1C7A524B0009357F /* View */,
+				CA32814E1C7A51D70009357F /* Controller */,
 				CA648D631C6CD5A20084A07F /* AppDelegate.h */,
 				CA648D641C6CD5A20084A07F /* AppDelegate.m */,
 				CA648D6C1C6CD5A20084A07F /* Assets.xcassets */,
 				CA648D6E1C6CD5A20084A07F /* LaunchScreen.storyboard */,
 				CA648D711C6CD5A20084A07F /* Info.plist */,
-				CA1036C41C6CD86B00A3E4E4 /* XmazonController.h */,
-				CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */,
-				CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */,
 				CA99DFBF1C6CDA5B006A92AC /* main.m */,
 				CAF6F2EA1C6FA12C0093352D /* ApiRequest.m */,
 				CAF6F2EC1C6FA1770093352D /* ApiRequest.h */,
@@ -424,6 +445,7 @@
 				CAF6F2EB1C6FA12C0093352D /* ApiRequest.m in Sources */,
 				CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */,
 				CA4AE4E71C713CD400A8F690 /* ListXmazonController.m in Sources */,
+				CA3281531C7A53C60009357F /* CategorieController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
