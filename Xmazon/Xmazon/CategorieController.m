@@ -7,6 +7,7 @@
 //
 
 #import "CategorieController.h"
+#import "ProductController.h"
 
 @interface CategorieController ()
 
@@ -79,6 +80,11 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"ONCLICK %@",[resultArray2 objectAtIndex:indexPath.row]);
+    ProductController* viewController = [[ProductController alloc] initWithNibName: @"ListXmazonController"bundle:nil];
+    
+    
+    //viewController.uid =[[resultArray objectAtIndex:indexPath.row] objectForKey:@"uid"];
+    [self.navigationController pushViewController:viewController animated:YES];
     
 }
 

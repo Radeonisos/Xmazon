@@ -10,6 +10,9 @@
 		004566E2C701F619B5B2FCCC /* libPods-XmazonTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 195781EB6192A5C0A38BC955 /* libPods-XmazonTests.a */; };
 		CA1036C71C6CD86B00A3E4E4 /* XmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */; };
 		CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */; };
+		CA1C79941C7BA31500D59448 /* SimpleTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA1C79931C7BA31500D59448 /* SimpleTabCell.xib */; };
+		CA1C79971C7BA4C500D59448 /* SimpleTableCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C79961C7BA4C500D59448 /* SimpleTableCellTableViewCell.m */; };
+		CA1C799A1C7BADE300D59448 /* ProductController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1C79991C7BADE300D59448 /* ProductController.m */; };
 		CA3281531C7A53C60009357F /* CategorieController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3281521C7A53C60009357F /* CategorieController.m */; };
 		CA4AE4DC1C70D2F900A8F690 /* 477015700_d1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DB1C70D2F900A8F690 /* 477015700_d1.jpg */; };
 		CA4AE4DE1C70D60A00A8F690 /* the-blurred-819391_640.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DD1C70D60A00A8F690 /* the-blurred-819391_640.jpg */; };
@@ -52,6 +55,11 @@
 		CA1036C41C6CD86B00A3E4E4 /* XmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmazonController.h; sourceTree = "<group>"; };
 		CA1036C51C6CD86B00A3E4E4 /* XmazonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmazonController.m; sourceTree = "<group>"; };
 		CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XmazonController.xib; sourceTree = "<group>"; };
+		CA1C79931C7BA31500D59448 /* SimpleTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTabCell.xib; sourceTree = "<group>"; };
+		CA1C79951C7BA4C500D59448 /* SimpleTableCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableCellTableViewCell.h; sourceTree = "<group>"; };
+		CA1C79961C7BA4C500D59448 /* SimpleTableCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableCellTableViewCell.m; sourceTree = "<group>"; };
+		CA1C79981C7BADE300D59448 /* ProductController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductController.h; sourceTree = "<group>"; };
+		CA1C79991C7BADE300D59448 /* ProductController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductController.m; sourceTree = "<group>"; };
 		CA3281511C7A53C60009357F /* CategorieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorieController.h; sourceTree = "<group>"; };
 		CA3281521C7A53C60009357F /* CategorieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorieController.m; sourceTree = "<group>"; };
 		CA4AE4DB1C70D2F900A8F690 /* 477015700_d1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 477015700_d1.jpg; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 		CA32814F1C7A524B0009357F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CA1C79931C7BA31500D59448 /* SimpleTabCell.xib */,
 				CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */,
 				CA1036C61C6CD86B00A3E4E4 /* XmazonController.xib */,
 			);
@@ -174,6 +183,10 @@
 				CA99DFBF1C6CDA5B006A92AC /* main.m */,
 				CAF6F2EA1C6FA12C0093352D /* ApiRequest.m */,
 				CAF6F2EC1C6FA1770093352D /* ApiRequest.h */,
+				CA1C79951C7BA4C500D59448 /* SimpleTableCellTableViewCell.h */,
+				CA1C79961C7BA4C500D59448 /* SimpleTableCellTableViewCell.m */,
+				CA1C79981C7BADE300D59448 /* ProductController.h */,
+				CA1C79991C7BADE300D59448 /* ProductController.m */,
 			);
 			path = Xmazon;
 			sourceTree = "<group>";
@@ -319,6 +332,7 @@
 				CA1036C81C6CD86B00A3E4E4 /* XmazonController.xib in Resources */,
 				CA4AE4DC1C70D2F900A8F690 /* 477015700_d1.jpg in Resources */,
 				CA4AE4E81C713CD400A8F690 /* ListXmazonController.xib in Resources */,
+				CA1C79941C7BA31500D59448 /* SimpleTabCell.xib in Resources */,
 				CA99DFC21C6CDE08006A92AC /* Default-568h@2x.png in Resources */,
 				CA648D701C6CD5A20084A07F /* LaunchScreen.storyboard in Resources */,
 				CA4AE4DE1C70D60A00A8F690 /* the-blurred-819391_640.jpg in Resources */,
@@ -441,7 +455,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA1036C71C6CD86B00A3E4E4 /* XmazonController.m in Sources */,
+				CA1C79971C7BA4C500D59448 /* SimpleTableCellTableViewCell.m in Sources */,
 				CA99DFC01C6CDA5B006A92AC /* main.m in Sources */,
+				CA1C799A1C7BADE300D59448 /* ProductController.m in Sources */,
 				CAF6F2EB1C6FA12C0093352D /* ApiRequest.m in Sources */,
 				CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */,
 				CA4AE4E71C713CD400A8F690 /* ListXmazonController.m in Sources */,
