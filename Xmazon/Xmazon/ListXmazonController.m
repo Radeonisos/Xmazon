@@ -30,7 +30,7 @@ NSMutableArray* resultArray;
     [self.view addSubview:spinner];
     [spinner startAnimating];
     NSString* urlList=@"store/list";
-    [appDelegate.api getApi:urlList];
+    [appDelegate.api getApi:urlList andSessionManager:appDelegate.api.sessionManagerApp];
 }
 
 - (void)requestReceive:(NSMutableArray *)responce{

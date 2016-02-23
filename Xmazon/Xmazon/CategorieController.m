@@ -33,7 +33,7 @@ NSMutableArray* resultArray2;
     NSString* urlCategory=@"/category/list?store_uid=";
     NSString *authValue = [NSString stringWithFormat:@"%@%@",urlCategory,uid];
     NSLog(@"%@",authValue);
-    [appDelegate.api getApi:authValue];
+    [appDelegate.api getApi:authValue andSessionManager:appDelegate.api.sessionManagerApp];
     
 }
 
@@ -81,7 +81,7 @@ static NSString* const kCellReuseIdentifier = @"CoolId";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"ONCLICK %@",[resultArray2 objectAtIndex:indexPath.row]);
     ProductController* viewController = [[ProductController alloc] initWithNibName: @"ListXmazonController"bundle:nil];
-    
+    viewController.uid =[[resultArray2 objectAtIndex:indexPath.row] objectForKey:@"uid"];
     
     //viewController.uid =[[resultArray objectAtIndex:indexPath.row] objectForKey:@"uid"];
     [self.navigationController pushViewController:viewController animated:YES];

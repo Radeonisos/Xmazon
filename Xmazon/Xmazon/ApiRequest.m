@@ -74,13 +74,13 @@
 
 
 
--(NSMutableArray*) getApi:(NSString*) url{
+-(NSMutableArray*) getApi:(NSString*) url andSessionManager:(GROAuth2SessionManager *)sessionManager{
     AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
-    [sessionManagerApp_ setAuthorizationHeaderWithCredential:credential];
+    [sessionManager setAuthorizationHeaderWithCredential:credential];
     __block NSMutableArray *myArray;
    //// dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     //sessionManagerApp_.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    [sessionManagerApp_ GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [sessionManager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche");
         //NSDictionary *jsonDict = (NSDictionary *) responseObject;
         
@@ -93,6 +93,7 @@
         [self.delegate requestReceive:myArray];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"sa marche pas");
+        [self.delegate requestError:error];
        // dispatch_semaphore_signal(semaphore);
     }];
     //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);

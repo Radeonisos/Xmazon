@@ -12,7 +12,7 @@
 @protocol ApiRestDelagate
 @optional
 -(void) requestReceive:(NSMutableArray*)responce;
--(void) requestError;
+-(void) requestError:(NSError*) error;
 @end
 
 @interface ApiRequest : NSObject
@@ -24,7 +24,7 @@
 -(instancetype) init;
 -(BOOL) getTokenUser:(NSString*) email andPassword:(NSString*) password;
 -(void) getToken;
--(NSMutableArray*) getApi:(NSString*) url;
+-(NSMutableArray*) getApi:(NSString*) url andSessionManager:(GROAuth2SessionManager*) sessionManager;
 -(NSMutableArray*) postApi;
 +(void)requestLocation:(NSString*)url and:(GROAuth2SessionManager*) sessionManagerApp_ completionBlock:(void (^)(NSArray * coordinates, NSError * error)) handler;
 

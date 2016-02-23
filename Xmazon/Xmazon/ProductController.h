@@ -15,5 +15,6 @@
     NSMutableArray *tableAray,*foodImageArray,*timeArray;
 }
 @property (weak, nonatomic) IBOutlet UITableView *storeList;
+@property (nonatomic, assign) NSString* uid;
 
 @end

@@ -14,6 +14,7 @@
 @end
 
 @implementation ProductController
+@synthesize uid;
 
 - (void)viewDidLoad
 {
@@ -22,6 +23,15 @@
     [self.navigationItem setHidesBackButton:false];
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.api.delegate = self;
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(160, 240);
+    spinner.tag = 12;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+    NSString* urlProduct=@"/product/list?category_uid=";
+    NSString *authValue = [NSString stringWithFormat:@"%@%@",urlProduct,uid];
+    NSLog(@"%@",authValue);
+    [appDelegate.api getApi:authValue andSessionManager:appDelegate.api.sessionManagerApp];
     tableAray = [NSMutableArray arrayWithObjects:@"Dentifrice", @"Papier Toilette", @"Stylos", @"test"];
 }
 
@@ -29,6 +39,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)requestReceive:(NSMutableArray *)responce{
+    NSLog(@"%@",responce);
+}
+
+-(void)requestError:( NSError*)error{
+    NSLog(@"%@",error);
 }
 
 #pragma - mark UITableView Methods
