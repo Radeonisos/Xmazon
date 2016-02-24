@@ -13,6 +13,8 @@
 @optional
 -(void) requestReceive:(NSMutableArray*)responce;
 -(void) requestError:(NSError*) error;
+-(void) requestConnexionApp:(BOOL) connexionApp;
+-(void) requestConnexionUser: (BOOL) connexionUser;
 @end
 
 @interface ApiRequest : NSObject
@@ -22,7 +24,7 @@
 @property (strong, nonatomic) id delegate;
 
 -(instancetype) init;
--(BOOL) getTokenUser:(NSString*) email andPassword:(NSString*) password;
+-(void) getTokenUser:(NSString*) email andPassword:(NSString*) password;
 -(void) getToken;
 -(NSMutableArray*) getApi:(NSString*) url andSessionManager:(GROAuth2SessionManager*) sessionManager;
 -(NSMutableArray*) postApi;

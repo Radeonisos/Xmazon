@@ -33,6 +33,7 @@ NSMutableArray* resultArray;
     [appDelegate.api getApi:urlList andSessionManager:appDelegate.api.sessionManagerApp];
 }
 
+
 - (void)requestReceive:(NSMutableArray *)responce{
     resultArray = responce;
     NSLog(@"Resultat du tableau des stores %@",resultArray);

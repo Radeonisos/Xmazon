@@ -19,12 +19,15 @@
 
 @implementation XmazonController
 
-ApiRequest* api;
+AppDelegate* appDelegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    api = [ApiRequest alloc];
-    [api getToken];
+    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.api.delegate = self;
+    [appDelegate.api getToken];
+
+    //S[api getToken];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -32,34 +35,38 @@ ApiRequest* api;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)requestConnexionApp:(BOOL) connexionApp{
+    if(!connexionApp){
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Problème" message:@"L'application est actuellement en maintenance" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* validateAction = [UIAlertAction actionWithTitle:@"Validate" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
+        }];
+        [alertController addAction:validateAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    
+}
+
+-(void) requestConnexionUser:(BOOL) connexionUser{
+    if(connexionUser){
+        ListXmazonController* viewController = [[ListXmazonController alloc] initWithNibName: @"ListXmazonController"bundle:nil];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+    else{
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Authentification" message:@"Adresse Mail ou mot de passe incorrecte" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* validateAction = [UIAlertAction actionWithTitle:@"Validate" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
+        }];
+        [alertController addAction:validateAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
 
 - (IBAction)btnLogin:(id)sender {
     NSString* email;
     NSString* password;
     email = [self.lableEmail text];
     password = [self.labelPassword text];
+    [appDelegate.api getTokenUser:email andPassword:password];
     
-    NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr"];
-    api.sessionManagerUser = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"f5a2d392-e727-40ed-8db0-19b18f155c52" secret:@"7a2d39dbb5424e4c5c916d7eb71dcc40bcc07401"];
-    NSLog(@"bonjour");
-    __block BOOL result = true;
-    [api.sessionManagerUser authenticateUsingOAuthWithPath:@"/oauth/token" username:email password:password scope:nil
-                                                success:^(AFOAuthCredential *credential) {
-                                                    result = true;
-                                                    NSLog(@"sa marche token user %@ : ",credential.accessToken);
-                                                    ListXmazonController* viewController = [[ListXmazonController alloc] init];
-                                                    [self.navigationController pushViewController:viewController animated:YES];
-                                                    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-                                                    appDelegate.api = api;
-                                                    
-                                                
-                                                } failure:^(NSError *error) {
-                                                    UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"Authentification" message:@"Adresse Mail ou mot de passe incorrecte" preferredStyle:UIAlertControllerStyleAlert];
-                                                    UIAlertAction* validateAction = [UIAlertAction actionWithTitle:@"Validate" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
-                                                    }];
-                                                    [alertController addAction:validateAction];
-                                                    [self presentViewController:alertController animated:YES completion:nil];
-                                                }];
 }
 
 /*

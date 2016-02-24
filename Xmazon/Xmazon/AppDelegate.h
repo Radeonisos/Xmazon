@@ -12,7 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, assign) ApiRequest* api;
+@property (strong, nonatomic) ApiRequest* api;
 
 
 @end

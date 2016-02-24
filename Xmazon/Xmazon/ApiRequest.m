@@ -29,74 +29,43 @@
                         };
     [sessionManagerApp_ authenticateUsingOAuthWithPath:@"/oauth/token" parameters:d success:^(AFOAuthCredential *credential) {
         [AFOAuthCredential storeCredential:credential withIdentifier:@"AccessToken"];
-        NSLog(@"%@",credential.accessToken);
-        NSLog(@"I have a token! %@ with refresh token %@ of type %@ ", credential.accessToken, credential.refreshToken, credential.tokenType);
-        NSLog(@"on passe ici");
-        [AFOAuthCredential storeCredential:credential withIdentifier:sessionManagerApp_.serviceProviderIdentifier];
+        [self.delegate requestConnexionApp:true];
+        //[AFOAuthCredential storeCredential:credential withIdentifier:sessionManagerApp_.serviceProviderIdentifier];
         
     }
                                            failure:^(NSError *error) {
-                                               NSLog(@"Error: %@", error);
+                                               [self.delegate requestConnexionApp:false];
                                            }];
     
 }
 
 
--(BOOL) getTokenUser:(NSString*) email andPassword:(NSString*) password{
+-(void) getTokenUser:(NSString*) email andPassword:(NSString*) password{
     NSURL *url = [NSURL URLWithString:@"http://xmazon.appspaces.fr"];
     sessionManagerUser_ = [GROAuth2SessionManager managerWithBaseURL:url clientID:@"f5a2d392-e727-40ed-8db0-19b18f155c52" secret:@"7a2d39dbb5424e4c5c916d7eb71dcc40bcc07401"];
-    NSLog(@"bonjour");
-    __block BOOL result = true;
     [sessionManagerUser_ authenticateUsingOAuthWithPath:@"/oauth/token" username:email password:password scope:nil
       success:^(AFOAuthCredential *credential) {
-        result = true;
          NSLog(@"sa marche token user %@ : ",credential.accessToken);
+          //[AFOAuthCredential storeCredential:credential withIdentifier:sessionManagerUser_.serviceProviderIdentifier];
+          [self.delegate requestConnexionUser:true];
      } failure:^(NSError *error) {
-         NSLog(@"sa marche pas token user");
-         result = false;
+         [self.delegate requestConnexionUser:false];
+        
      }];
-    return result;
-}
-
-+(void)requestLocation:(NSString*)url and:(GROAuth2SessionManager*) sessionManagerApp_ completionBlock:(void (^)(NSArray * coordinates, NSError * error)) handler{
-    AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
-    [sessionManagerApp_ setAuthorizationHeaderWithCredential:credential];
-    __block NSMutableArray *myArray;
-    [sessionManagerApp_ GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"sa marche");
-        myArray = [responseObject objectForKey:@"result"];
-        //NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"sa marche pas");
-    }];
-    
 }
 
 
 
 -(NSMutableArray*) getApi:(NSString*) url andSessionManager:(GROAuth2SessionManager *)sessionManager{
-    AFOAuthCredential *credential = [AFOAuthCredential retrieveCredentialWithIdentifier:@"AccessToken"];
-    [sessionManager setAuthorizationHeaderWithCredential:credential];
     __block NSMutableArray *myArray;
-   //// dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    //sessionManagerApp_.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     [sessionManager GET:url parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche");
-        //NSDictionary *jsonDict = (NSDictionary *) responseObject;
-        
-        //NSArray *test = [NSArray arrayWithObject:[jsonDict objectForKey:@"result"]];
-        //NSLog(@"test %@",test[0]);
-        
         myArray = [responseObject objectForKey:@"result"];
-        //NSLog (@"uid store :%@", [[myArray objectAtIndex:0] objectForKey:@"uid"]);
-        //dispatch_semaphore_signal(semaphore);
         [self.delegate requestReceive:myArray];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"sa marche pas");
         [self.delegate requestError:error];
-       // dispatch_semaphore_signal(semaphore);
     }];
-    //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     return myArray;
 }
 

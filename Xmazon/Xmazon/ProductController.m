@@ -16,6 +16,7 @@
 @implementation ProductController
 @synthesize uid;
 
+NSMutableArray* tableAray;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,8 +32,8 @@
     NSString* urlProduct=@"/product/list?category_uid=";
     NSString *authValue = [NSString stringWithFormat:@"%@%@",urlProduct,uid];
     NSLog(@"%@",authValue);
-    [appDelegate.api getApi:authValue andSessionManager:appDelegate.api.sessionManagerApp];
-    tableAray = [NSMutableArray arrayWithObjects:@"Dentifrice", @"Papier Toilette", @"Stylos", @"test"];
+
+    [appDelegate.api getApi:authValue andSessionManager:appDelegate.api.sessionManagerUser];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +44,10 @@
 
 -(void)requestReceive:(NSMutableArray *)responce{
     NSLog(@"%@",responce);
+    tableAray = responce;
+    [[self.view viewWithTag:12] stopAnimating];
+    [self.storeList reloadData];
+    
 }
 
 -(void)requestError:( NSError*)error{
@@ -72,10 +77,15 @@
         cell = [nibArray objectAtIndex:0];
     }
     NSLog(@"%@",[tableAray objectAtIndex:indexPath.row]);
+    NSDictionary* value = [tableAray objectAtIndex:indexPath.row];
+    NSLog(@" print de value %@", value);
     //cell.nameLabel.text = [tableAray objectAtIndex:indexPath.row];
-    cell.nameLabel.text=[tableAray objectAtIndex:indexPath.row];
-    //cell.priceLabel.text = [timeArray objectAtIndex:indexPath.row];
-    
+    cell.nameLabel.text=[value objectForKey:@"name"];
+    //cell.priceLabel.text = [NSString stringWithFormat:@"%f", [value objectForKey:@"price"]];
+    if([value objectForKey:@"available"])
+        cell.statueLabel.text = @"available";
+    else
+        cell.statueLabel.text = @"enavailable";
     return cell;
 }
 
