@@ -20,7 +20,7 @@ NSMutableArray* tableAray;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Liste des categorie";
+    self.title = @"Product";
     [self.navigationItem setHidesBackButton:false];
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.api.delegate = self;
@@ -81,11 +81,11 @@ NSMutableArray* tableAray;
     NSLog(@" print de value %@", value);
     //cell.nameLabel.text = [tableAray objectAtIndex:indexPath.row];
     cell.nameLabel.text=[value objectForKey:@"name"];
-    //cell.priceLabel.text = [NSString stringWithFormat:@"%f", [value objectForKey:@"price"]];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%1.2f", [[value objectForKey:@"price"]floatValue]];
     if([value objectForKey:@"available"])
         cell.statueLabel.text = @"available";
     else
-        cell.statueLabel.text = @"enavailable";
+        cell.statueLabel.text = @"unavailable";
     return cell;
 }
 

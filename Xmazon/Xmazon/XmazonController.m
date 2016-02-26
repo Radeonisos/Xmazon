@@ -11,6 +11,7 @@
 #import "ApiRequest.h"
 #import "AppDelegate.h"
 #import "ListXmazonController.h"
+#import "PopUpViewController.h"
 
 
 @interface XmazonController ()
@@ -68,6 +69,21 @@ AppDelegate* appDelegate;
     [appDelegate.api getTokenUser:email andPassword:password];
     
 }
+
+- (IBAction)btnSubscribe:(id)sender {
+    NSLog(@"bonjour");
+    
+    
+    PopUpViewController* viewController = [[PopUpViewController alloc] initWithNibName: @"PopUpViewController"bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+        //self.navigationController.definesPresentationContent = YES;
+    /*viewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:viewController animated:YES completion:nil];*/
+     
+
+}
+
 
 /*
 #pragma mark - Navigation

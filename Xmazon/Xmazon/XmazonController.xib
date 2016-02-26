@@ -25,7 +25,7 @@
                     <rect key="frame" x="47" y="155" width="227" height="21"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="AE7-4O-TME">
@@ -50,6 +50,14 @@
                     </state>
                     <connections>
                         <action selector="btnLogin:" destination="-1" eventType="touchUpInside" id="QAU-Qw-SeM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cfh-84-IRN">
+                    <rect key="frame" x="125" y="479" width="70" height="30"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Subscribe"/>
+                    <connections>
+                        <action selector="btnSubscribe:" destination="-1" eventType="touchUpInside" id="uYY-CR-OW8"/>
                     </connections>
                 </button>
             </subviews>

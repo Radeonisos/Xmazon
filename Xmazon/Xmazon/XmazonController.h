@@ -11,5 +11,6 @@
 @interface XmazonController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *lableEmail;
 @property (weak, nonatomic) IBOutlet UITextField *labelPassword;
+@property (nonatomic,retain) UIViewController* popoverController;
 
 @end

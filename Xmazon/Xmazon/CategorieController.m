@@ -21,7 +21,7 @@ NSMutableArray* resultArray2;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Liste des categorie";
+    self.title = @"Category";
     [self.navigationItem setHidesBackButton:false];
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.api.delegate = self;

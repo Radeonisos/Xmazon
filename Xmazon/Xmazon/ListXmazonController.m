@@ -20,7 +20,7 @@ NSMutableArray* resultArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Liste des magasins";
+    self.title = @"Stores";
     [self.navigationItem setHidesBackButton:TRUE];
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.api.delegate = self;
