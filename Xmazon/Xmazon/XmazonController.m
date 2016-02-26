@@ -23,6 +23,7 @@
 AppDelegate* appDelegate;
 
 - (void)viewDidLoad {
+    [self.navigationItem setHidesBackButton:TRUE];
     [super viewDidLoad];
     appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     appDelegate.api.delegate = self;

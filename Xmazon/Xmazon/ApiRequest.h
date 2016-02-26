@@ -27,7 +27,7 @@
 -(void) getTokenUser:(NSString*) email andPassword:(NSString*) password;
 -(void) getToken;
 -(NSMutableArray*) getApi:(NSString*) url andSessionManager:(GROAuth2SessionManager*) sessionManager;
--(NSMutableArray*) postApi;
+-(NSMutableArray*) postApi:(NSDictionary*)param;
 +(void)requestLocation:(NSString*)url and:(GROAuth2SessionManager*) sessionManagerApp_ completionBlock:(void (^)(NSArray * coordinates, NSError * error)) handler;
 
 

@@ -70,19 +70,15 @@
 }
 
 
--(NSMutableArray*) postApi{
+-(NSMutableArray*) postApi:(NSDictionary*) param{
     NSMutableArray * result;
-    NSDictionary* d = @{
-                        @"email" : @"test1",
-                        @"password" : @"toor",
-                        };
-    
-    [sessionManagerApp_ POST:@"/auth/subscribe" parameters:d success:^(NSURLSessionDataTask *task, id responseObject) {
+    [sessionManagerApp_ POST:@"/auth/subscribe" parameters:param success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"sa marche");
         NSLog(@" Reponce du subscribe : %@", responseObject);
-    
+        [self.delegate requestReceive:responseObject];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"sa marche pas");
+        [self.delegate requestError:error];
     }];
     
     return result;
