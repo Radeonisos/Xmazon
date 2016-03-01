@@ -8,6 +8,7 @@
 
 #import "ProductController.h"
 #import "SimpleTableCellTableViewCell.h"
+#import "XmazonController.h"
 
 @interface ProductController ()
 
@@ -17,13 +18,16 @@
 @synthesize uid;
 
 NSMutableArray* tableAray;
+AppDelegate* appDelegateProduct;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title = @"Product";
     [self.navigationItem setHidesBackButton:false];
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.api.delegate = self;
+    UIBarButtonItem* decoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(onTouchDecoButton)];
+    self.navigationItem.rightBarButtonItems = @[decoButton];
+    appDelegateProduct = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegateProduct.api.delegate = self;
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160, 240);
     spinner.tag = 12;
@@ -33,7 +37,13 @@ NSMutableArray* tableAray;
     NSString *authValue = [NSString stringWithFormat:@"%@%@",urlProduct,uid];
     NSLog(@"%@",authValue);
 
-    [appDelegate.api getApi:authValue andSessionManager:appDelegate.api.sessionManagerUser];
+    [appDelegateProduct.api getApi:authValue andSessionManager:appDelegateProduct.api.sessionManagerUser];
+}
+
+- (void) onTouchDecoButton {
+    appDelegateProduct.api = [ApiRequest alloc];
+    XmazonController* viewController = [[XmazonController alloc] initWithNibName: @"XmazonController"bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

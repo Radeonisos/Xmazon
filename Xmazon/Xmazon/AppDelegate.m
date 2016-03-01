@@ -23,6 +23,7 @@
     api = [ApiRequest alloc];
     UIWindow* w = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     w.rootViewController = [[UINavigationController alloc] initWithRootViewController:[XmazonController new]];
+    
     [w makeKeyAndVisible];
     self.window = w;
     return YES;

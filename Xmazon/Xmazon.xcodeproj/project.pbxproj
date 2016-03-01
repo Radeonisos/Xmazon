@@ -19,6 +19,8 @@
 		CA4AE4DE1C70D60A00A8F690 /* the-blurred-819391_640.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4DD1C70D60A00A8F690 /* the-blurred-819391_640.jpg */; };
 		CA4AE4E71C713CD400A8F690 /* ListXmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */; };
 		CA4AE4E81C713CD400A8F690 /* ListXmazonController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */; };
+		CA5DF4A91C8633E600C0EFBF /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5DF4A71C8633E600C0EFBF /* TabBarViewController.m */; };
+		CA5DF4AA1C8633E600C0EFBF /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA5DF4A81C8633E600C0EFBF /* TabBarViewController.xib */; };
 		CA648D651C6CD5A20084A07F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA648D641C6CD5A20084A07F /* AppDelegate.m */; };
 		CA648D6D1C6CD5A20084A07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA648D6C1C6CD5A20084A07F /* Assets.xcassets */; };
 		CA648D701C6CD5A20084A07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA648D6E1C6CD5A20084A07F /* LaunchScreen.storyboard */; };
@@ -71,6 +73,9 @@
 		CA4AE4E41C713CD400A8F690 /* ListXmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListXmazonController.h; sourceTree = "<group>"; };
 		CA4AE4E51C713CD400A8F690 /* ListXmazonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListXmazonController.m; sourceTree = "<group>"; };
 		CA4AE4E61C713CD400A8F690 /* ListXmazonController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListXmazonController.xib; sourceTree = "<group>"; };
+		CA5DF4A61C8633E600C0EFBF /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		CA5DF4A71C8633E600C0EFBF /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		CA5DF4A81C8633E600C0EFBF /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		CA648D5D1C6CD5A20084A07F /* Xmazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xmazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA648D631C6CD5A20084A07F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA648D641C6CD5A20084A07F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +144,9 @@
 				CA096D401C80BE660032E638 /* PopUpViewController.h */,
 				CA096D411C80BE660032E638 /* PopUpViewController.m */,
 				CA096D421C80BE660032E638 /* PopUpViewController.xib */,
+				CA5DF4A61C8633E600C0EFBF /* TabBarViewController.h */,
+				CA5DF4A71C8633E600C0EFBF /* TabBarViewController.m */,
+				CA5DF4A81C8633E600C0EFBF /* TabBarViewController.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5DF4AA1C8633E600C0EFBF /* TabBarViewController.xib in Resources */,
 				CA4AE4DC1C70D2F900A8F690 /* 477015700_d1.jpg in Resources */,
 				CA4AE4E81C713CD400A8F690 /* ListXmazonController.xib in Resources */,
 				CA1C79941C7BA31500D59448 /* SimpleTabCell.xib in Resources */,
@@ -463,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5DF4A91C8633E600C0EFBF /* TabBarViewController.m in Sources */,
 				CA1036C71C6CD86B00A3E4E4 /* XmazonController.m in Sources */,
 				CA1C79971C7BA4C500D59448 /* SimpleTableCellTableViewCell.m in Sources */,
 				CA096D431C80BE660032E638 /* PopUpViewController.m in Sources */,

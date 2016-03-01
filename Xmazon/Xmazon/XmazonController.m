@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "ListXmazonController.h"
 #import "PopUpViewController.h"
+#import "TabBarViewController.h"
 
 
 @interface XmazonController ()
@@ -76,7 +77,7 @@ AppDelegate* appDelegate;
     
     
     PopUpViewController* viewController = [[PopUpViewController alloc] initWithNibName: @"PopUpViewController"bundle:nil];
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.navigationController pushViewController:viewController animated:YES];    
         //self.navigationController.definesPresentationContent = YES;
     /*viewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;

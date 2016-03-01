@@ -8,6 +8,7 @@
 
 #import "CategorieController.h"
 #import "ProductController.h"
+#import "XmazonController.h"
 
 @interface CategorieController ()
 
@@ -18,13 +19,17 @@
 @synthesize uid;
 
 NSMutableArray* resultArray2;
+AppDelegate* appDelegateCategorie;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Category";
     [self.navigationItem setHidesBackButton:false];
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.api.delegate = self;
+    [self.navigationItem setHidesBackButton:TRUE];
+    UIBarButtonItem* decoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(onTouchDecoButton)];
+    self.navigationItem.rightBarButtonItems = @[decoButton];
+    appDelegateCategorie= (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegateCategorie.api.delegate = self;
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160, 240);
     spinner.tag = 12;
@@ -33,8 +38,14 @@ NSMutableArray* resultArray2;
     NSString* urlCategory=@"/category/list?store_uid=";
     NSString *authValue = [NSString stringWithFormat:@"%@%@",urlCategory,uid];
     NSLog(@"%@",authValue);
-    [appDelegate.api getApi:authValue andSessionManager:appDelegate.api.sessionManagerApp];
+    [appDelegateCategorie.api getApi:authValue andSessionManager:appDelegateCategorie.api.sessionManagerApp];
     
+}
+
+- (void) onTouchDecoButton {
+    appDelegateCategorie.api = [ApiRequest alloc];
+    XmazonController* viewController = [[XmazonController alloc] initWithNibName: @"XmazonController"bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)requestReceive:(NSMutableArray *)responce{

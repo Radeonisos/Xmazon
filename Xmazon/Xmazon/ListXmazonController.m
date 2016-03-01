@@ -7,6 +7,7 @@
 //
 
 #import "ListXmazonController.h"
+#import "XmazonController.h"
 
 
 @interface ListXmazonController ()
@@ -17,20 +18,29 @@
 @implementation ListXmazonController
 
 NSMutableArray* resultArray;
+AppDelegate* appDelegateList;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Stores";
     [self.navigationItem setHidesBackButton:TRUE];
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.api.delegate = self;
+    UIBarButtonItem* decoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(onTouchDecoButton)];
+    self.navigationItem.rightBarButtonItems = @[decoButton];
+     appDelegateList = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegateList.api.delegate = self;
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.center = CGPointMake(160, 240);
     spinner.tag = 12;
     [self.view addSubview:spinner];
     [spinner startAnimating];
     NSString* urlList=@"store/list";
-    [appDelegate.api getApi:urlList andSessionManager:appDelegate.api.sessionManagerApp];
+    [appDelegateList.api getApi:urlList andSessionManager:appDelegateList.api.sessionManagerApp];
+}
+
+- (void) onTouchDecoButton {
+    appDelegateList.api = [ApiRequest alloc];
+    XmazonController* viewController = [[XmazonController alloc] initWithNibName: @"XmazonController"bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 

@@ -79,6 +79,8 @@ AppDelegate* appDelegateSubscribe;
     [[self.view viewWithTag:12] stopAnimating];
     UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"OK" message:@"Le compte a bien été créer" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* validateAction = [UIAlertAction actionWithTitle:@"Validate" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action) {
+        XmazonController* viewController = [[XmazonController alloc] initWithNibName: @"XmazonController"bundle:nil];
+        [self.navigationController pushViewController:viewController animated:YES];
     }];
     [alertController addAction:validateAction];
     [self presentViewController:alertController animated:YES completion:nil];
